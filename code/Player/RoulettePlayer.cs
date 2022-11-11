@@ -14,6 +14,11 @@ public partial class RoulettePlayer : Player
 	public int Points { get; set; }
 	[Net]
 	public int RoundsWon { get; set; }
+	[Net]
+	public int RoundsLost { get; set; }
+	[Net]
+	public int PlayersKilled { get; set; }
+	
 
 	// Need later: private TimeSince timeSinceJumpReleased;
 

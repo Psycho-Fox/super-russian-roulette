@@ -1,3 +1,12 @@
 Revolver: The gun that is used between players.
 Revolver.Handler: Handles the current gamemode and shit like that.
 Revolver.Barrel: Handles how many bullets are in the chamber as well as where the current position of the chamber is located.
+
+NOTE: Redo the design for this part of the game, it's a bit different to how I was thinking.
+
+(If I'm understanding this correctly.)
+Have the Revolver be serverside, players will use the serverside value for the gun's barrel. 
+This will protect against a player just changing the revolver's barrel to always be empty locally aka cheating.
+Have the revolver netcode be handled (mostly) separately from the entity.
+???
+profit
