@@ -64,7 +64,7 @@ public partial class SuperRussianRoulette : Game
 
 	private static void ClientLog(Client cl)
 	{
-		//Log.Info( $"Player connected: {cl.Name}" );
+		Log.Info( $"Player connected: {cl.Name} | ID: {cl.PlayerId}" );
 		Log.Info( $"Current GameState is: {CurrentState}" );
 		Log.Info( $"Players Connected: {All.OfType<RoulettePlayer>().Count()}" );
 	}
