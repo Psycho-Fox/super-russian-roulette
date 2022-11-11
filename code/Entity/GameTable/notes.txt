@@ -1,0 +1,3 @@
+This is probably redundant, and stupid, however this is my only idea of what to name things, I am terrible at naming things. But it will suffice.
+Table: Where the players sit at, this defines where the table entity will spawn, the table will grow or shrink depending on how many players are at it, this will be hell to implement however I don't know of a better option, than this stupid assinine method.
+Table.Seat: Why

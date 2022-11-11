@@ -1,0 +1,3 @@
+Revolver: The gun that is used between players.
+Revolver.Handler: Handles the current gamemode and shit like that.
+Revolver.Barrel: Handles how many bullets are in the chamber as well as where the current position of the chamber is located.

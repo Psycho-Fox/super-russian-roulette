@@ -1,0 +1,17 @@
+Note: texts taken from: SRR-Design-doc.txt
+
+Super One In the Chamber (mode.soitc.cs)
+- same rules as one in the chamber however each player receives points based on how long they survive, points can be used to buy cards which you can place on the table, this can be, pass the gun to someone else, fill the chamber with bullets, survive a headshot, etc.
+- When 2 players are alive they can initiate a sudden death with a proper card for it, these are rapidfire minigames, drunken brawl and inverse russian roulette are two of them for instance.
+
+One in the chamber (mode.oitc.cs) 
+- Players take turns passing the revolver around the table.
+- The revolver has 6 chambers with 1 bullet inside
+- each player has 10 seconds to point the gun to their head or spin the barrel, if they don't meet that requirement other players are allowed to pull their guns out and kill them.
+- match ends when one player is left
+
+Randomized (mode.d6.cs)
+- same rules as one in the chamber however every shot is completely random, it rolls a d6 and if it lands on a specific set number the gun will go off, this would be fun on youtube not in practice.
+
+Hot potato (mode.hp.cs) 
+- Same rules as one in the chamber however when a player is done with their turn they choose the next player to receive the gun, pretty boring, might make the timer go down from 10 seconds turns to astronomically low amounts as the round goes on for funnies, using floats.

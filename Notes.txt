@@ -1,0 +1,10 @@
+code: Code shit
+fonts: Font shit
+maps: Map shit??? 
+materials: Material shit
+models: Model shit
+obj: Obj shit
+particles: Particle shit
+shaders: Shader shit
+sound: Sound shit
+ui: User Interface shit // Moved to code // Todo: Remove

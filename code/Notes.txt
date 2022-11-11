@@ -1,0 +1,10 @@
+srs.cs: Main gamemode file
+Pawn.cs: old stuff from the template // Removed
+Shop: Ingame store, players purchase items here with points they get from surviving each time the gun is passed to them or making a play to get another player killed.
+Scoreboard: Top 10 players in the game, ones with the most points are higher. (duh)
+Entity: Entities the game uses, this will be refactored, still trying to learn this system it's very different from GMod.
+UI: The Hud and shit.
+Player: Player entity, it's pretty complex so probably best to have it in a seperate folder from the rest of stuff
+obj: no fucking clue
+Properties: no fucking clue
+
