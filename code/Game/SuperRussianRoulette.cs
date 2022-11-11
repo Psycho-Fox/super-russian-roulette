@@ -58,7 +58,7 @@ public partial class SuperRussianRoulette : Game
 			pawn.Transform = tx;
 		}
 
-		client.SetInt( "myass", 0 );
+		//client.SetInt( "myass", 0 );
 		ClientLog( client );
 	}
 

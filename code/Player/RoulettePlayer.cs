@@ -6,6 +6,15 @@ using System;
 namespace Roulette;
 public partial class RoulettePlayer : Player
 {
+	// Sets up networked variables.
+	// Is there a way I could stick this into a function? It clogs everything up... :(
+	[Net]
+	public bool PlayerReady { get; set; }
+	[Net, Local]
+	public int Points { get; set; }
+	[Net]
+	public int RoundsWon { get; set; }
+
 	// Need later: private TimeSince timeSinceJumpReleased;
 
 	// Load the appearance of each player who passes in.
@@ -18,7 +27,7 @@ public partial class RoulettePlayer : Player
 	}
 
 	// Init client
-	public RoulettePlayer(Client client) : this()
+	public RoulettePlayer( Client client ) : this()
 	{
 		Clothing.LoadFromClient( client );
 	}
@@ -74,8 +83,8 @@ public partial class RoulettePlayer : Player
 			if (CameraMode is RouletteThirdPersonCamera)
 			{
 				CameraMode = new FirstPersonCamera();
-				client.AddInt( "myass" );
-				Log.Info( $"My Ass: {client.GetInt("myass")}" );
+				//client.AddInt( "myass" );
+				//Log.Info( $"My Ass: {client.GetInt("myass")}" ); was just for testing.
 			}
 			else
 			{
