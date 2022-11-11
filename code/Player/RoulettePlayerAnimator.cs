@@ -6,6 +6,9 @@ using System.Buffers;
 using Sandbox.Internal;
 using static Sandbox.Event;
 
+// NOTE: this was shamelessly stolen from https://github.com/Facepunch/sandbox/blob/master/code/Player.cs but unwrapped from the animHelper wrapper.
+
+namespace Roulette;
 public partial class RoulettePlayerAnimator : PawnAnimator
 {
 	public override void Simulate()
@@ -27,10 +30,10 @@ public partial class RoulettePlayerAnimator : PawnAnimator
 	{
 		var idealRot = Rotation.LookAt( Input.Rotation.Forward.WithZ( 0 ), Vector3.Up );
 		Rotation = Rotation.Slerp( rot, idealRot, WishVelocity.Length * Time.Delta * TurnSpeed );
-		Rotation = Rotation.Clamp( idealRot, 45.0f, out var shuffle );
+		Rotation = Rotation.Clamp( idealRot, 45.0f, out var shuffle ); // VS is bitching about the shuffle but I'll leave it for now.
 	}
 	
-	private void DoMovement(Rotation rot, Vector3 vel, Vector3 WishVel, AnimatedEntity ent)
+	private static void DoMovement(Rotation rot, Vector3 vel, Vector3 WishVel, AnimatedEntity ent)
 	{
 		// Velocity
 		var forward = rot.Forward.Dot( vel );
@@ -48,7 +51,7 @@ public partial class RoulettePlayerAnimator : PawnAnimator
 
 		var WishForward = rot.Forward.Dot( WishVel );
 		var WishSideward = rot.Right.Dot( WishVel );
-		var WishAngle = MathF.Atan2( WishSideward, WishForward ).RadianToDegree().NormalizeDegrees();
+		var WishAngle = MathF.Atan2( WishSideward, WishForward ).RadianToDegree().NormalizeDegrees(); // IDE0059 Unnecessary assignment of a value to 'WishAngle' ¯\_(ツ)_/¯
 
 		ent.SetAnimParameter( "wish_direction", angle );
 		ent.SetAnimParameter( "wish_speed", WishVel.Length );
@@ -100,7 +103,7 @@ public partial class RoulettePlayerAnimator : PawnAnimator
 }
 
 
-
+// Keep this to finish translating.
 /*
  * void SimulateAnimation( Obsolete.PawnController controller ) // Note: PawnController is deprecated, expect refactors. 💀
 	{
@@ -123,7 +126,7 @@ public partial class RoulettePlayerAnimator : PawnAnimator
 		animHelper.IsSitting = controller.HasTag( "sitting" );
 		animHelper.IsNoclipping = controller.HasTag( "climbing" ); // This is fucking useless for my purposes.
 		animHelper.IsSwimming = WaterLevel >= 0.5f; // Who the fuck is going to be swimming in a saloon?
-		animHelper.IsWeaponLowered = false;
+	->	animHelper.IsWeaponLowered = false;
 
 		if ( controller.HasEvent( "jump" ) ) animHelper.TriggerJump();
 		if ( ActiveChild != lastWeapon ) animHelper.TriggerDeploy();

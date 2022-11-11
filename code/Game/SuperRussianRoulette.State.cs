@@ -13,7 +13,7 @@ public enum GameStates // Current state of the game // Taken from various facepu
 
 partial class SuperRussianRoulette : Game // Redundant :? not sure	
 {
-	public static GameStates CurrentState => (Current as SuperRussianRoulette)?.GameState ?? GameStates.Intermission; // Terrible, from deathmatch but I don't have time for a cleaner implementation.
+	public static GameStates CurrentState => (Current as SuperRussianRoulette)?.GameState ?? GameStates.Intermission; // Terrible (for my needs), from deathmatch but I don't have time for a cleaner implementation.
 	public static new SuperRussianRoulette Current => Game.Current as SuperRussianRoulette;
 
 	[Net]

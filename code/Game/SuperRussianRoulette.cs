@@ -12,9 +12,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-//
-// You don't need to put things in a namespace, but it doesn't hurt.
-// Ok thx garry
 namespace Roulette;
 
 /// <summary>

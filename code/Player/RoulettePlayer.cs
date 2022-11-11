@@ -2,9 +2,11 @@
 using Roulette;
 using Obsolete;
 using System;
+
+namespace Roulette;
 public partial class RoulettePlayer : Player
 {
-	private TimeSince timeSinceJumpReleased;
+	// Need later: private TimeSince timeSinceJumpReleased;
 
 	// Load the appearance of each player who passes in.
 	public ClothingContainer Clothing = new();
@@ -69,7 +71,7 @@ public partial class RoulettePlayer : Player
 
 		if (Input.Pressed(InputButton.View) )
 		{
-			if (CameraMode is ThirdPersonCamera)
+			if (CameraMode is RouletteThirdPersonCamera)
 			{
 				CameraMode = new FirstPersonCamera();
 				client.AddInt( "myass" );
@@ -77,7 +79,7 @@ public partial class RoulettePlayer : Player
 			}
 			else
 			{
-				CameraMode = new ThirdPersonCamera();
+				CameraMode = new RouletteThirdPersonCamera();
 			}
 		}
 		
@@ -98,9 +100,8 @@ public partial class RoulettePlayer : Player
 		}*/	
 	}
 
-	Entity lastWeapon;
+	// Unused atm, readonly Entity lastWeapon;
 
-	// Move this to it's own class in the future called RoulettePlayerAnimation, this was shamelessly stolen from https://github.com/Facepunch/sandbox/blob/master/code/Player.cs but all the cool kids were doing it so I don't think it matters.
 	// NOTE: Moved to RoulettePlayerAnimator.cs
 
 }
